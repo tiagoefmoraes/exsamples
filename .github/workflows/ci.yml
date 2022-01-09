@@ -9,6 +9,7 @@ jobs:
         elixir: ["1.13"]
         otp: ["24", "23", "22"]
         os: ["ubuntu-20.04"]
+        lint: [true]
         include:
           - { elixir: "1.12", otp: "24", os: "ubuntu-20.04" }
           - { elixir: "1.11", otp: "24", os: "ubuntu-20.04" }
@@ -26,4 +27,6 @@ jobs:
         otp-version: ${{ matrix.otp }}
         elixir-version: ${{ matrix.elixir }}
     - run: mix compile --warnings-as-errors
+    - run: mix format --check-formatted --dry-run
+      if: ${{ matrix.lint }}
     - run: mix test

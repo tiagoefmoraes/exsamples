@@ -2,12 +2,14 @@ defmodule ExSamples.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :exsamples,
-     version: "0.1.0",
-     elixir: "~> 1.5",
-     description: description(),
-     package: package(),
-     deps: deps()]
+    [
+      app: :exsamples,
+      version: "0.1.0",
+      elixir: "~> 1.5",
+      description: description(),
+      package: package(),
+      deps: deps()
+    ]
   end
 
   def application do
@@ -25,9 +27,11 @@ defmodule ExSamples.Mixfile do
   end
 
   defp package do
-    [files: ["lib", "mix.exs", "README.md", "LICENSE"],
-     maintainers: ["Marlus Saraiva"],
-     licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/msaraiva/exsamples"}]
+    [
+      files: ["lib", "mix.exs", "README.md", "LICENSE"],
+      maintainers: ["Marlus Saraiva"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/msaraiva/exsamples"}
+    ]
   end
 end
